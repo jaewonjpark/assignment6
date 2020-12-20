@@ -1,3 +1,9 @@
+// Jaewon Park
+// jaepark@chapman.edu
+// 2328614
+// CPSC 350 - 01
+// Assignment #6
+
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
@@ -83,17 +89,24 @@ int partition(double* myArray, int start, int end){
 }
 
 void quickSort(double* myArray, int start, int end){
+  int size;
   if (start < end){
     int idx = partition(myArray, start, end);
     quickSort(myArray, start, idx-1);
     quickSort(myArray, idx+1, end);
   }
-  cout << "Quick Sort: " << endl;
-  for (int k = 0; k < n; ++k){
-    cout << myArray[k] << endl;
-  }
-  cout << " " << endl;
 }
+
+// void printSort(double* myArray, int size)
+// {
+//   int i;
+//   for(i=0; i<size; i++)
+//   {
+//     cout << "Quick Sort: " << endl;
+//     cout << myArray[i] << endl;
+//   }
+// }
+
 
 int mergeSort(double array[], int l, int m, int r)
 {
@@ -183,30 +196,35 @@ int main (int argc, char ** argv){
   end = clock();
   calculatedTime = (float(end - start)/CLOCKS_PER_SEC)*1000;
   cout << "insertion sort time: " << calculatedTime << "seconds" << size << endl;
+  cout << " " << endl;
 
   start = clock();
   selectionSort(selectionArray, size);
   end = clock();
   calculatedTime = (float(end - start)/CLOCKS_PER_SEC)*1000;
   cout << "selection sort time: " << calculatedTime << "seconds" << size << endl;
+  cout << " " << endl;
 
   start = clock();
   quickSort(quickArray, 0, size - 1);
   end = clock();
   calculatedTime = (float(end - start)/CLOCKS_PER_SEC)*1000;
   cout << "Quick sort time: " << calculatedTime << "seconds" << size << endl;
+  cout << " " << endl;
 
   start = clock();
   bubbleSort(bubbleArray, size);
   end = clock();
   calculatedTime = (float(end - start)/CLOCKS_PER_SEC)*1000;
   cout << "bubble sort time: " << calculatedTime << "seconds" << size << endl;
+  cout << " " << endl;
 
   start = clock();
   mergeSort(mergeArray, 0, 0, size);
   end = clock();
   calculatedTime = (float(end - start)/CLOCKS_PER_SEC)*1000;
   cout << "Merge sort time: " << calculatedTime << "seconds" << size << endl;
+  cout << " " << endl;
 
   return 0;
 }
