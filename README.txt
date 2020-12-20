@@ -23,4 +23,5 @@ Assignment #6
 
 5.) Running Instructions
 1. g++ *.cpp
-2. ./a.out test.txt
+2. ./a.out
+3. test.txt
